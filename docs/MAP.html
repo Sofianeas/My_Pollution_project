@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pollution Occitanie - Exploration de la Pollution en Occitanie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Stylesheets -->
+    <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+    <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS for Enhanced Styling -->
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+
+<body class="nav-fixed">
+    <div id="quarto-search-results"></div>
+    
+    <header id="quarto-header" class="headroom fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-container container-fluid">
+                <a class="navbar-brand" href="./index.html">Pollution Occitanie</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Home</a>
+                        </li>
+ 
+
+                     
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Weather Forecast
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navDepartmentPollutionDropdown">
+                                <li><a class="dropdown-item" href="./Weather_Forecast.html">HERAULT</a></li>
+                                
+                                <!-- More departments can be added in a similar way -->
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <!-- Pollution Data by Department Dropdown -->
+                               <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="menu-text">Pollutions par Départements</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                    <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">HERAULT</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTE-GARONNE.html"><span class="dropdown-text">HAUTE-GARONNE</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTES-PYRENEES.html"><span class="dropdown-text">HAUTES-PYRENEES</span></a></li>
+                                    <li><a class="dropdown-item" href="./AVEYRON.html"><span class="dropdown-text">AVEYRON</span></a></li>
+                                    <li><a class="dropdown-item" href="./ARIEGE.html"><span class="dropdown-text">ARIEGE</span></a></li>
+                                    <li><a class="dropdown-item" href="./PYRENEES-ORIENTALES.html"><span class="dropdown-text">PYRENEES-ORIENTALES</span></a></li>
+                                    
+                                    <!-- More departments can be added in a similar way -->
+                                </ul>
+                            </li>
+                        
+                             
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <!-- Pollution Data by Department Dropdown -->
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-text">Pollutions par City</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                        <li><a class="dropdown-item" href="./MONTPELLIER.html"><span class="dropdown-text">Montpellier</span></a></li>
+                                        <li><a class="dropdown-item" href="./TOULOUSE.html"><span class="dropdown-text">Toulouse</span></a></li>
+                                        <li><a class="dropdown-item" href="./TARBES.html"><span class="dropdown-text">Tarbes</span></a></li>
+                                        <li><a class="dropdown-item" href="./PERPIGNAN.html"><span class="dropdown-text">Perpignan</span></a></li>
+                                        <li><a class="dropdown-item" href="./LOURDES.html"><span class="dropdown-text">Lourdes</span></a></li>
+                                        
+                                        
+                                        <!-- More departments can be added in a similar way -->
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                       <!-- Pollution Data by Department Dropdown -->
+                                       <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="menu-text">Interactive Map</span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                            <li><a class="dropdown-item" href="./MAP.html"><span class="dropdown-text">
+                                               Occitanie </span></a></li>
+                                            
+                                    
+                                            <!-- More departments can be added in a similar way -->
+                                        </ul>
+                                    </li>
+
+                    
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="content" id="quarto-document-content">
+    
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Map</h1>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+  
+</header>
+
+<div id="map"></div>
+            
+            
+<iframe src="exported_map.html" style="width:100%; height:500px;"></iframe>
+            
+            
+            
+
+
+
+     
+
+
+</main> <!-- /main -->
+
+<script>
+// Load GeoJSON from an external file
+fetch('data.geojson')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        // Add GeoJSON layer to the map once the file is loaded
+        L.geoJson(data, {
+            // Define the style for each feature
+            style: function(feature) {
+                return { color: feature.properties.style.fillColor };
+            },
+            // Define what happens on each feature hover
+            onEachFeature: function(feature, layer) {
+                if (feature.properties && feature.properties.nom_dept) {
+                    layer.bindPopup(feature.properties.nom_dept);
+                }
+            },
+            // Define a filter function to add markers
+            filter: function(feature, layer) {
+                return feature.properties.valeur > 25; // Replace with your threshold
+            },
+            // Define a pointToLayer function to convert points to markers
+            pointToLayer: function(feature, latlng) {
+                if (feature.properties.valeur > 25) { // Replace with your threshold
+                    return L.marker(latlng); // Create a marker
+                }
+            }
+        }).addTo(map);
+    });
+</script>
+
+
+
+</body></html>

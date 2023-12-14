@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pollution Occitanie - Exploration de la Pollution en Occitanie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Stylesheets -->
+    <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+    <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS for Enhanced Styling -->
+    <style>
+        
+    </style>
+</head>
+
+<body class="nav-fixed">
+    <div id="quarto-search-results"></div>
+    
+    <header id="quarto-header" class="headroom fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-container container-fluid">
+                <a class="navbar-brand" href="./index.html">Pollution Occitanie</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Home</a>
+                        </li>
+ 
+
+                     
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Weather Forecast
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navDepartmentPollutionDropdown">
+                                <li><a class="dropdown-item" href="./Weather_Forecast.html">HERAULT</a></li>
+                                
+                                <!-- More departments can be added in a similar way -->
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <!-- Pollution Data by Department Dropdown -->
+                               <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="menu-text">Pollutions par Départements</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                    <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">HERAULT</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTE-GARONNE.html"><span class="dropdown-text">HAUTE-GARONNE</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTES-PYRENEES.html"><span class="dropdown-text">HAUTES-PYRENEES</span></a></li>
+                                    <li><a class="dropdown-item" href="./AVEYRON.html"><span class="dropdown-text">AVEYRON</span></a></li>
+                                    <li><a class="dropdown-item" href="./ARIEGE.html"><span class="dropdown-text">ARIEGE</span></a></li>
+                                    <li><a class="dropdown-item" href="./PYRENEES-ORIENTALES.html"><span class="dropdown-text">PYRENEES-ORIENTALES</span></a></li>
+                                    
+                                    <!-- More departments can be added in a similar way -->
+                                </ul>
+                            </li>
+                        
+                             
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <!-- Pollution Data by Department Dropdown -->
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-text">Pollutions par City</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                        <li><a class="dropdown-item" href="./MONTPELLIER.html"><span class="dropdown-text">Montpellier</span></a></li>
+                                        <li><a class="dropdown-item" href="./TOULOUSE.html"><span class="dropdown-text">Toulouse</span></a></li>
+                                        <li><a class="dropdown-item" href="./TARBES.html"><span class="dropdown-text">Tarbes</span></a></li>
+                                        <li><a class="dropdown-item" href="./PERPIGNAN.html"><span class="dropdown-text">Perpignan</span></a></li>
+                                        <li><a class="dropdown-item" href="./LOURDES.html"><span class="dropdown-text">Lourdes</span></a></li>
+                                        
+                                        
+                                        <!-- More departments can be added in a similar way -->
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                       <!-- Pollution Data by Department Dropdown -->
+                                       <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="menu-text">Interactive Map</span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                            <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">Occitanie</span></a></li>
+                                            
+                                    
+                                            <!-- More departments can be added in a similar way -->
+                                        </ul>
+                                    </li>
+
+                    
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Perpignan</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+<section>
+  <div class="quarto-figure quarto-figure-center"  padding: 20px;">
+    <figure class="figure" style="text-align: center;">
+        <!-- Embedding the SVG emblem -->
+        <img src="Perpignan.svg" class="img-fluid figure-img" alt="Hearult Emblem" width="400" style="margin-left: auto; margin-right: auto; display: block;">
+    </figure>
+    <!-- Caption for the emblem -->
+    <figcaption class="figure-caption" style="text-align: center;"><em>Perpignan, La Catalane</em></figcaption>
+</div>
+
+<!-- Additional information about Haute-Garonne -->
+<ul>
+    <li><strong>Nombres d’habitants</strong>: 118 032 hab</li>
+    <li><strong>Densité</strong>: 	1 734(<em>nombre d’habitants au km<sup>2</sup></em>)</li>
+    <li><strong>Département</strong>: 	Pyrénées-Orientales</li>
+    <li><strong>Région</strong>: Occitanie</li>
+</ul>
+</section>
+
+<div class="description-graphique">
+    <h3>Variation de la Température et des Niveaux de Pollution au fil des Mois</h3>
+    <p>Les températures fluctuent au fil des mois avec une tendance à la hausse vers le milieu de l'année, ce qui pourrait correspondre à l'augmentation saisonnière attendue durant les mois d'été. Cependant, les valeurs de pollution ne semblent pas suivre une tendance saisonnière claire et montrent plutôt des pics irréguliers tout au long de l'année. Ces pics de pollution ne correspondent pas nécessairement aux augmentations de température, ce qui suggère que les niveaux de pollution pourraient être influencés par d'autres facteurs que la température seule, tels que les activités industrielles ou le trafic routier.
+
+        Les deux échelles sont indépendantes, avec la température sur l'axe des y à gauche et la pollution sur l'axe des y à droite, ce qui permet une comparaison directe des deux mesures dans le temps, mais ne suggère pas une relation de cause à effet directe entre elles.</p>
+  </div>
+  <iframe src="Perpignan_Temperature_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+  <div class="description-graphique">
+    <h3>Dynamique Mensuelle de la Température et des Niveaux de Pollution</h3>
+    <p>Le plus grand segment, en bleu, représente les NOx (oxydes d'azote) qui constituent 28,4% des polluants, suivis de près par l'ozone (O3) en rouge avec 26,6%. Le dioxyde d'azote (NO2) est le troisième plus important, représenté en vert avec 18,4%. Les particules PM10, qui sont des particules en suspension d'un diamètre inférieur à 10 micromètres, composent 13,9% des polluants et sont représentées en violet. Les oxydes d'azote (NO) comptent pour 9,56%, et enfin, les particules PM2.5, qui sont encore plus fines que les PM10, représentent la plus petite part avec 3,09%.
+
+        Ce graphique est utile pour comprendre rapidement la contribution relative de chaque polluant à la pollution globale de l'air dans la ville. Il indique que les oxydes d'azote et l'ozone sont les principaux contributeurs à la pollution de l'air à Perpignan.
+    </p>
+  </div>
+  <iframe src="Perpignan_pie_chart.html" style="width:100%; height:500px;"></iframe>
+   
+  <div class="description-graphique">
+    <h3>Corrélation entre Température et Niveaux de Pollution à Perpignan</h3>
+    <p>Chaque barre verticale représente un mois, et chaque couleur dans la barre correspond à un type de polluant. De bas en haut, nous avons les oxydes d'azote (NO en bleu), le dioxyde d'azote (NO2 en rouge), les oxydes d'azote totaux (NOx en orange), l'ozone (O3 en jaune), les particules fines PM10 (en violet), et les particules plus fines PM2.5 (en turquoise).
+
+        Les données suggèrent que les niveaux de pollution varient chaque mois, mais il y a une présence constante de NOx et O3 qui sont les plus élevés dans le profil de pollution. Les particules PM2.5 semblent être le polluant le moins présent, tandis que les PM10 ont une concentration significative. Ce type de graphique est utile pour évaluer l'exposition aux différents polluants au fil du temps et pour identifier les périodes de l'année où la pollution atmosphérique est la plus élevée.</p>
+  </div>
+  <iframe src="Perpignan_bar_chart.html" style="width:100%; height:500px;"></iframe>
+
+    <h2>Analyse Interactive d'autres Facteurs Climatiques et Pollution</h2>
+    <div class="description-graphique">
+        <h3>Influence de l'humidité sur les Niveaux de Pollution</h3>
+        <p>On observe une variation notable de l'humidité et des niveaux de pollution, sans qu'une tendance claire ne se dégage pour les deux paramètres. Par exemple, l'humidité chute drastiquement de janvier à février puis augmente et fluctue les mois suivants. Les valeurs de pollution, en revanche, montrent des pics et des creux à différents moments, sans corrélation évidente avec l'humidité.
+
+            Ce type de graphique est utile pour examiner s'il existe une relation entre l'humidité et la pollution. Cependant, une analyse plus approfondie serait nécessaire pour déterminer si une telle relation existe réellement.
+
+          </p>
+    </div>
+    <iframe src="Perpignan_Humidity_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+
+    <div class="description-graphique">
+        <h3>Influence de la Vitesse du Vent sur les Niveaux de Pollution</h3>
+        <p>On observe que la vitesse du vent fluctue considérablement au cours de l'année, avec des valeurs allant de près de 2 km/h à plus de 6 km/h. En ce qui concerne la pollution, les valeurs semblent également varier de façon importante, avec des pics et des creux qui ne correspondent pas systématiquement aux changements dans la vitesse du vent. Par exemple, un pic de pollution en avril ne coïncide pas avec une vitesse de vent particulièrement basse ou élevée, ce qui suggère que d'autres facteurs influencent les niveaux de pollution indépendamment de la vitesse du vent.
+
+          </p>
+    </div>
+    <iframe src="Perpignan_Wind_Speed_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+</div>
+
+
+</main> <!-- /main -->
+
+
+
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

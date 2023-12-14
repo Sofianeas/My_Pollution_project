@@ -1,0 +1,60 @@
+---
+title: "Analyse de la Pollution et des Facteurs Climatiques dans les Hautes-Pyrénées"
+---
+
+# Hautes-Pyrénées, Le Joyau des Pyrénées
+
+![Hautes Pyrenees Emblem](Hautes_Pyrenees.svg){width=400}
+
+*Emblème des Hautes-Pyrénées*
+
+- **Nombres d’habitants**: 229 788 hab
+- **Densité**: 51 (nombre d’habitants au km²)
+- **Région**: Occitanie
+
+## Variation de la Température et des Niveaux de Pollution au fil des Mois
+
+La figure intitulée "Interactive Plot: Temperature vs Pollution Levels" montre la relation entre la température en degrés Celsius (représentée par la ligne rouge) et les valeurs de pollution (représentées par les barres violettes) pour chaque mois de l'année 2023. Sur l'axe horizontal (abscisse), nous avons les mois de janvier à octobre, et sur les axes verticaux (ordonnées), la température est mesurée sur le côté gauche et la valeur de pollution sur le côté droit.
+
+      Il semble que la température et les niveaux de pollution ne suivent pas un modèle directement proportionnel ou inversement proportionnel tout au long de l'année. Cependant, une tendance générale peut être observée où les valeurs de pollution augmentent à certains moments de l'année lorsque la température est également élevée, ce qui pourrait indiquer que des températures plus chaudes sont associées à une augmentation de la concentration des polluants. Cette analyse suggère que les deux paramètres sont liés et que la compréhension de leur relation est essentielle pour évaluer l'impact des conditions météorologiques sur la qualité de l'air.
+      
+
+[Interactive Plot: Temperature vs Pollution Levels](Hautes_Pyrenees_Temperature_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Dynamique Mensuelle de la Température et des Niveaux de Pollution
+
+Le graphique intitulé "Répartition des concentrations de pollution à l'Hautes Pyrénées" est un diagramme circulaire qui illustre la répartition des différents polluants dans l'air pour l'année 2023. Chaque secteur du diagramme représente un type de polluant avec son pourcentage correspondant sur la totalité des polluants mesurés. 
+      Cette visualisation permet d'identifier rapidement le polluant dominant, l'ozone (O3), qui constitue presque la moitié des polluants présents dans l'air des Hautes Pyrénées. Les oxydes d'azote (NOX, NO2, et NO) représentent ensemble une grande partie de la pollution, ce qui indique leur contribution significative à la qualité de l'air dans cette région. Les particules fines (PM10 et PM2.5) bien que moins présentes, restent des composants importants à surveiller en raison de leurs impacts sur la santé. Ce diagramme est utile pour les décideurs et les scientifiques pour comprendre l'impact des différents polluants et élaborer des stratégies de réduction de la pollution.
+
+[Hautes Pyrenees Pie Chart](Hautes_Pyrénées_pie_chart.html){width=100% height=500px}
+
+## Corrélation entre Température et Niveaux de Pollution en Hérault
+
+Le graphique intitulé "Corrélation entre Température et Niveaux de Pollution en Hérault" présente les données de pollution par mois pour l'année 2023, avec une distinction entre plusieurs polluants tels que le PM2.5, PM10, O3 (ozone), NOX (oxydes d'azote), NO2 (dioxyde d'azote) et NO (monoxyde d'azote), représentés par des barres colorées. Chaque couleur dans les barres empilées correspond à un type de polluant différent et leur hauteur représente la concentration maximale de pollution en microgrammes par mètre cube (µg/m³) pour chaque mois de l'année, de janvier à octobre.
+
+      Il est important de noter qu'il n'y a pas de ligne rouge visible sur ce graphique, ce qui suggère que la température n'est pas directement représentée ici. L'analyse de ces données permettrait d'observer comment les niveaux de différents polluants varient au cours de l'année, ce qui pourrait être corrélé à des variations saisonnières ou à des activités humaines spécifiques qui influencent la qualité de l'air. Cependant, sans les données de température, on ne peut pas déterminer la corrélation entre la température et les niveaux de pollution uniquement à partir de ce graphique.
+
+
+[Hautes Pyrenees Bar Chart](Hautes_Pyrénées_bar_chart.html){width=100% height=500px}
+
+# Analyse Interactive d'autres Facteurs Climatiques et Pollution
+
+## Influence de l'humidité sur les Niveaux de Pollution
+
+
+Le graphique intitulé "Influence de l'humidité sur les Niveaux de Pollution" montre la relation entre l'humidité atmosphérique (en pourcentage, indiquée par la ligne bleue) et les valeurs de pollution (en unité non spécifiée, indiquée par la ligne violette), sur une période s'étendant de janvier à octobre 2023. Sur l'axe horizontal, chaque mois est représenté, tandis que l'axe vertical gauche indique le pourcentage d'humidité et l'axe vertical droit les valeurs de pollution.
+
+          On observe que les deux paramètres présentent des fluctuations significatives et ne semblent pas avoir une corrélation directe et constante au cours de l'année. Par exemple, une augmentation de l'humidité en février correspond à une baisse de la pollution, tandis qu'en juin, une baisse de l'humidité coïncide avec une augmentation de la pollution. Cela peut suggérer que d'autres facteurs interviennent dans la relation entre l'humidité et les niveaux de pollution, ou que cette relation peut varier en fonction des conditions locales et des sources de pollution. L'analyse de ces données peut aider à comprendre comment les variations climatiques, comme l'humidité, peuvent influencer la concentration des polluants dans l'air.      
+
+[Influence of Humidity on Pollution Levels](Hautes_Pyrenees_Humidity_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Influence de la Vitesse du Vent sur les Niveaux de Pollution
+
+Le graphique intitulé "Interactive Plot: Wind Speed vs Pollution Levels" compare la vitesse du vent (en km/h, représentée par la ligne verte) et les valeurs de pollution (représentée par la ligne violette), sur une échelle de janvier à octobre 2023. L'axe des abscisses indique les mois de l'année, et l'axe des ordonnées mesure la vitesse du vent sur le côté gauche et les valeurs de pollution sur le côté droit.
+
+          On observe des variations significatives dans les deux paramètres au fil des mois. Il n'y a pas de tendance claire ou de corrélation directe qui se dégage entre la vitesse du vent et les niveaux de pollution sur l'ensemble de la période observée. Par exemple, une augmentation de la vitesse du vent en février ne correspond pas à une baisse ou une hausse systématique de la pollution. De même, des valeurs élevées de pollution peuvent se produire à la fois lors de vitesses de vent faibles et élevées.
+          
+          L'absence de corrélation constante suggère que la relation entre la vitesse du vent et la pollution peut être influencée par d'autres facteurs environnementaux ou anthropiques. Cela peut inclure la géographie locale, les sources de pollution temporaires, et d'autres conditions météorologiques qui ne sont pas prises en compte dans ce graphique. L'interprétation précise des données requerrait une analyse plus approfondie incluant ces facteurs supplémentaires.
+          
+
+[Interactive Plot: Wind Speed vs Pollution Levels](Hautes_Pyrenees_Wind_Speed_vs_Pollution_Levels.html){width=100% height=500px}

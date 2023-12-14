@@ -1,0 +1,57 @@
+---
+title: "Environmental Analysis in Hérault"
+format: html
+---
+
+# Hérault: Environmental Analysis
+
+## Hérault Emblem
+
+![Hearult Emblem](HERAULT.svg){width=400}
+
+*Hérault, Le Pays des Cœurs de Ville*
+
+## Key Information about Hérault
+
+- **Nombres d’habitants**: 1,188,973
+- **Densité**: 195 (*nombre d’habitants au km²*)
+- **Région**: Occitanie
+
+## Graphical Descriptions
+
+### Variation de la Température et des Niveaux de Pollution au fil des Mois
+
+La figure présente un graphique interactif comparant les niveaux de pollution et les températures sur une période allant de janvier 2023 à octobre 2023. On observe deux axes : l'axe des ordonnées de gauche indique la température en degrés Celsius (°C), représentée par une courbe rouge, et l'axe des ordonnées de droite représente la valeur de la pollution, indiquée par des barres violettes. La température semble augmenter progressivement jusqu'en août, où elle atteint un pic avant de redescendre. Par contre, la pollution affiche des fluctuations plus irrégulières avec une pointe notable en juillet. Le graphique suggère une corrélation possible entre la température et la pollution, particulièrement en été, mais des analyses plus approfondies seraient nécessaires pour confirmer cette tendance.
+
+
+
+<iframe src="Herault_Temperature_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+### Dynamique Mensuelle de la Température et des Niveaux de Pollution
+
+Ce camembert illustre la répartition des différentes concentrations de polluants dans l'atmosphère du département de l'Hérault. Les polluants sont représentés par différentes couleurs et leur proportion respective est indiquée en pourcentage. L'ozone (O3) constitue la part la plus importante avec 32,2 %, suivie par les oxydes d'azote (NOX) à 25,7 % et le dioxyde d'azote (NO2) à 16,5 %. Le monoxyde d'azote (NO) représente 10,9 %, les particules fines PM10 9,38 % et les PM2.5 la plus petite proportion avec 5,33 %. Cette visualisation met en évidence l'importance relative de chaque polluant dans l'air de ce département.
+
+<iframe src="Herault_pie_chart.html" style="width:100%; height:500px;"></iframe>
+
+### Corrélation entre Température et Niveaux de Pollution en Hérault
+
+Ce graphique en barres empilées affiche la concentration maximale mensuelle de différents polluants dans l'air du département de l'Hérault pour l'année 2023. Chaque barre représente un mois, de janvier à octobre, et chaque couleur dans la barre correspond à un type de polluant. Les unités sont en microgrammes par mètre cube (µg/m³). Les polluants présentés sont les PM2.5, PM10, O3 (ozone), NOX, NO2, et NO. Les PM2.5 et PM10 sont des particules en suspension de tailles différentes, l'ozone est un gaz qui peut être un polluant de l'air près du sol, et les NOX, NO2, et NO sont des oxydes d'azote, souvent associés à la pollution automobile et industrielle. On peut observer que la concentration de chaque type de polluant varie mois par mois. Cependant, chaque mois montre une combinaison de tous les polluants, ce qui suggère une présence constante de ces substances dans l'air tout au long de l'année. Il serait intéressant d'analyser les sources potentielles de ces pollutions et leur impact sur la santé publique et l'environnement.
+
+
+<iframe src="Herault_bar_chart.html" style="width:100%; height:500px;"></iframe>
+
+## Analyse Interactive d'autres Facteurs Climatiques et Pollution
+
+### Influence de l'humidité sur les Niveaux de Pollution
+
+Le graphique présente la relation entre l'humidité (représentée par la courbe bleue) et les niveaux de pollution (représentée par la courbe violette), mesurés chaque mois de janvier à octobre 2023. L'axe des ordonnées de gauche montre l'humidité en pourcentage, tandis que l'axe des ordonnées de droite indique la valeur de la pollution. On observe des variations significatives dans les niveaux d'humidité et de pollution au fil des mois. Il semble y avoir une tendance à la baisse de l'humidité de janvier à avril, suivie d'une augmentation jusqu'à juillet, puis une nouvelle diminution. Les niveaux de pollution, quant à eux, montrent des pics à certains moments, en particulier en avril et septembre, où les valeurs de pollution augmentent malgré les différentes tendances d'humidité. Ce graphique suggère qu'il pourrait y avoir une corrélation entre l'humidité et les niveaux de pollution, mais cette relation n'est pas directe ni systématique, comme en témoignent les variations non parallèles des deux mesures. Des analyses plus poussées seraient nécessaires pour comprendre les dynamiques précises entre ces deux variables environnementales.
+
+<iframe src="Herault_Humidity_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+### Influence de la Vitesse du Vent sur les Niveaux de Pollution
+
+Ce graphique montre l'effet de la vitesse du vent sur les niveaux de pollution au cours de l'année 2023, de janvier à octobre. La vitesse du vent, indiquée par la courbe verte en kilomètres par heure (km/h) sur l'axe des ordonnées de gauche, semble varier considérablement d'un mois à l'autre. Les valeurs de pollution, représentées par les barres violettes et mesurées sur l'axe des ordonnées de droite, montrent également des fluctuations importantes. Une interprétation possible de ce graphique pourrait être que la vitesse du vent joue un rôle dans la dispersion des polluants dans l'air. Par exemple, des vitesses de vent élevées pourraient être associées à des valeurs de pollution plus faibles, car le vent disperse les polluants plus efficacement. Cependant, ce n'est pas une relation constante au fil des mois, indiquant que d'autres facteurs peuvent également influencer les niveaux de pollution. Une analyse plus approfondie est nécessaire pour tirer des conclusions définitives.
+
+
+
+<iframe src="Herault_Wind_Speed_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>

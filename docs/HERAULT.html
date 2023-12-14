@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pollution Occitanie - Exploration de la Pollution en Occitanie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Stylesheets -->
+    <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+    <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS for Enhanced Styling -->
+    <style>
+        
+    </style>
+</head>
+
+<body class="nav-fixed">
+    <div id="quarto-search-results"></div>
+    
+    <header id="quarto-header" class="headroom fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-container container-fluid">
+                <a class="navbar-brand" href="./index.html">Pollution Occitanie</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Home</a>
+                        </li>
+ 
+
+                     
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Weather Forecast
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navDepartmentPollutionDropdown">
+                                <li><a class="dropdown-item" href="./Weather_Forecast.html">HERAULT</a></li>
+                                
+                                <!-- More departments can be added in a similar way -->
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <!-- Pollution Data by Department Dropdown -->
+                               <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="menu-text">Pollutions par Départements</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                    <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">HERAULT</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTE-GARONNE.html"><span class="dropdown-text">HAUTE-GARONNE</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTES-PYRENEES.html"><span class="dropdown-text">HAUTES-PYRENEES</span></a></li>
+                                    <li><a class="dropdown-item" href="./AVEYRON.html"><span class="dropdown-text">AVEYRON</span></a></li>
+                                    <li><a class="dropdown-item" href="./ARIEGE.html"><span class="dropdown-text">ARIEGE</span></a></li>
+                                    <li><a class="dropdown-item" href="./PYRENEES-ORIENTALES.html"><span class="dropdown-text">PYRENEES-ORIENTALES</span></a></li>
+                                    
+                                    <!-- More departments can be added in a similar way -->
+                                </ul>
+                            </li>
+                        
+                             
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <!-- Pollution Data by Department Dropdown -->
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-text">Pollutions par City</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                        <li><a class="dropdown-item" href="./MONTPELLIER.html"><span class="dropdown-text">Montpellier</span></a></li>
+                                        <li><a class="dropdown-item" href="./TOULOUSE.html"><span class="dropdown-text">Toulouse</span></a></li>
+                                        <li><a class="dropdown-item" href="./TARBES.html"><span class="dropdown-text">Tarbes</span></a></li>
+                                        <li><a class="dropdown-item" href="./PERPIGNAN.html"><span class="dropdown-text">Perpignan</span></a></li>
+                                        <li><a class="dropdown-item" href="./LOURDES.html"><span class="dropdown-text">Lourdes</span></a></li>
+                                        
+                                        
+                                        <!-- More departments can be added in a similar way -->
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                       <!-- Pollution Data by Department Dropdown -->
+                                       <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="menu-text">Interactive Map</span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                            <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">Occitanie</span></a></li>
+                                            
+                                    
+                                            <!-- More departments can be added in a similar way -->
+                                        </ul>
+                                    </li>
+
+                    
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hérault</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+<section>
+  <div class="quarto-figure quarto-figure-center"  padding: 20px;">
+    <figure class="figure" style="text-align: center;">
+        <!-- Embedding the SVG emblem -->
+        <img src="HERAULT.svg" class="img-fluid figure-img" alt="Hearult Emblem" width="400" style="margin-left: auto; margin-right: auto; display: block;">
+    </figure>
+    <!-- Caption for the emblem -->
+    <figcaption class="figure-caption" style="text-align: center;"><em>Hérault, Le Pays des Cœurs de Ville</em></figcaption>
+</div>
+
+<!-- Additional information about Haute-Garonne -->
+<ul>
+    <li><strong>Nombres d’habitants</strong>: 1 188 973</li>
+    <li><strong>Densité</strong>: 195 (<em>nombre d’habitants au km<sup>2</sup></em>)</li>
+    <li><strong>Région</strong>: Occitanie</li>
+</ul>
+</section>
+
+<div class="description-graphique">
+    <h3>Variation de la Température et des Niveaux de Pollution au fil des Mois</h3>
+    <p>La figure présente un graphique interactif comparant les niveaux de pollution et les températures sur une période allant de janvier 2023 à octobre 2023. On observe deux axes : l'axe des ordonnées de gauche indique la température en degrés Celsius (°C), représentée par une courbe rouge, et l'axe des ordonnées de droite représente la valeur de la pollution, indiquée par des barres violettes. La température semble augmenter progressivement jusqu'en août, où elle atteint un pic avant de redescendre. Par contre, la pollution affiche des fluctuations plus irrégulières avec une pointe notable en juillet. Le graphique suggère une corrélation possible entre la température et la pollution, particulièrement en été, mais des analyses plus approfondies seraient nécessaires pour confirmer cette tendance.</p>
+  </div>
+  <iframe src="Herault_Temperature_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+  <div class="description-graphique">
+    <h3>Dynamique Mensuelle de la Température et des Niveaux de Pollution</h3>
+    <p>Ce camembert illustre la répartition des différentes concentrations de polluants dans l'atmosphère du département de l'Hérault. Les polluants sont représentés par différentes couleurs et leur proportion respective est indiquée en pourcentage. L'ozone (O3) constitue la part la plus importante avec 32,2 %, suivie par les oxydes d'azote (NOX) à 25,7 % et le dioxyde d'azote (NO2) à 16,5 %. Le monoxyde d'azote (NO) représente 10,9 %, les particules fines PM10 9,38 % et les PM2.5 la plus petite proportion avec 5,33 %. Cette visualisation met en évidence l'importance relative de chaque polluant dans l'air de ce département.</p>
+  </div>
+  <iframe src="Herault_pie_chart.html" style="width:100%; height:500px;"></iframe>
+   
+  <div class="description-graphique">
+    <h3>Corrélation entre Température et Niveaux de Pollution en Hérault</h3>
+    <p>Ce graphique en barres empilées affiche la concentration maximale mensuelle de différents polluants dans l'air du département de l'Hérault pour l'année 2023. Chaque barre représente un mois, de janvier à octobre, et chaque couleur dans la barre correspond à un type de polluant. Les unités sont en microgrammes par mètre cube (µg/m³).
+
+      Les polluants présentés sont les PM2.5, PM10, O3 (ozone), NOX, NO2, et NO. Les PM2.5 et PM10 sont des particules en suspension de tailles différentes, l'ozone est un gaz qui peut être un polluant de l'air près du sol, et les NOX, NO2, et NO sont des oxydes d'azote, souvent associés à la pollution automobile et industrielle.
+      
+      On peut observer que la concentration de chaque type de polluant varie mois par mois. Cependant, chaque mois montre une combinaison de tous les polluants, ce qui suggère une présence constante de ces substances dans l'air tout au long de l'année. Il serait intéressant d'analyser les sources potentielles de ces pollutions et leur impact sur la santé publique et l'environnement.</p>
+  </div>
+  <iframe src="Herault_bar_chart.html" style="width:100%; height:500px;"></iframe>
+
+    <h2>Analyse Interactive d'autres Facteurs Climatiques et Pollution</h2>
+    <div class="description-graphique">
+        <h3>Influence de l'humidité sur les Niveaux de Pollution</h3>
+        <p>Le graphique présente la relation entre l'humidité (représentée par la courbe bleue) et les niveaux de pollution (représentée par la courbe violette), mesurés chaque mois de janvier à octobre 2023. L'axe des ordonnées de gauche montre l'humidité en pourcentage, tandis que l'axe des ordonnées de droite indique la valeur de la pollution.
+
+          On observe des variations significatives dans les niveaux d'humidité et de pollution au fil des mois. Il semble y avoir une tendance à la baisse de l'humidité de janvier à avril, suivie d'une augmentation jusqu'à juillet, puis une nouvelle diminution. Les niveaux de pollution, quant à eux, montrent des pics à certains moments, en particulier en avril et septembre, où les valeurs de pollution augmentent malgré les différentes tendances d'humidité.
+          
+          Ce graphique suggère qu'il pourrait y avoir une corrélation entre l'humidité et les niveaux de pollution, mais cette relation n'est pas directe ni systématique, comme en témoignent les variations non parallèles des deux mesures. Des analyses plus poussées seraient nécessaires pour comprendre les dynamiques précises entre ces deux variables environnementales.
+          
+          
+          
+          
+          
+          </p>
+    </div>
+    <iframe src="Herault_Humidity_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+
+    <div class="description-graphique">
+        <h3>Influence de la Vitesse du Vent sur les Niveaux de Pollution</h3>
+        <p>Ce graphique montre l'effet de la vitesse du vent sur les niveaux de pollution au cours de l'année 2023, de janvier à octobre. La vitesse du vent, indiquée par la courbe verte en kilomètres par heure (km/h) sur l'axe des ordonnées de gauche, semble varier considérablement d'un mois à l'autre. Les valeurs de pollution, représentées par les barres violettes et mesurées sur l'axe des ordonnées de droite, montrent également des fluctuations importantes.
+
+          Une interprétation possible de ce graphique pourrait être que la vitesse du vent joue un rôle dans la dispersion des polluants dans l'air. Par exemple, des vitesses de vent élevées pourraient être associées à des valeurs de pollution plus faibles, car le vent disperse les polluants plus efficacement. Cependant, ce n'est pas une relation constante au fil des mois, indiquant que d'autres facteurs peuvent également influencer les niveaux de pollution. Une analyse plus approfondie est nécessaire pour tirer des conclusions définitives.
+          
+          </p>
+    </div>
+    <iframe src="Herault_Wind_Speed_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+</div>
+
+
+</main> <!-- /main -->
+
+
+
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

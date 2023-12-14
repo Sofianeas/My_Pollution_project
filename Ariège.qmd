@@ -1,0 +1,54 @@
+---
+title: "Analyse des Facteurs Climatiques et de la Pollution en Ariège"
+---
+
+# ARIEGE, Le Pays des Pyrénées Cathares
+
+![Ariège Emblem](Ariège.png){width=400}
+
+*Emblème de l'Ariège*
+
+- **Nombres d’habitants**: 153 954 hab
+- **Densité**: 31 (nombre d’habitants au km²)
+- **Région**: Occitanie
+
+## Variation de la Température et des Niveaux de Pollution au fil des Mois
+
+Le graphique intitulé "Interactive Plot: Temperature vs Pollution Levels" présente deux séries de données : la température en degrés Celsius, représentée par la ligne rouge, et les niveaux de pollution, représentés par les barres violettes, pour chaque mois de janvier à octobre 2023.
+
+        L'axe horizontal (abscisse) montre les mois de l'année, tandis que l'axe vertical (ordonnée) montre à gauche les valeurs de température et à droite les valeurs de pollution. La température semble augmenter progressivement au fil des mois, ce qui pourrait correspondre à la transition de l'hiver au printemps et à l'été. Les valeurs de pollution, quant à elles, varient de mois en mois et ne semblent pas suivre une tendance clairement liée à la température.
+        
+        L'interprétation des données pourrait suggérer que la température et la pollution sont des paramètres indépendants ou que d'autres variables non représentées sur le graphique peuvent influencer les niveaux de pollution. Par exemple, les émissions de sources spécifiques ou les changements dans les conditions météorologiques autres que la température pourraient également jouer un rôle.
+
+[Interactive Plot: Temperature vs Pollution Levels](ARIEGE_Temperature_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Dynamique Mensuelle de la Température et des Niveaux de Pollution
+
+Le graphique présenté est un diagramme circulaire qui illustre la répartition des différentes concentrations de polluants dans l'air des Pyrénées Orientales. Chaque secteur du diagramme correspond à un type de polluant et est accompagné de son pourcentage représentatif dans l'ensemble des polluants mesurés
+        L'ozone constitue la plus grande part des polluants, ce qui peut être préoccupant étant donné que des niveaux élevés d'ozone au sol sont nocifs pour la santé humaine et l'environnement. Les oxydes d'azote, qui incluent NOX, NO2 et NO, représentent également une proportion significative de la pollution, ce qui pourrait indiquer des sources importantes de combustion, telles que le trafic automobile ou l'activité industrielle. Les particules fines (PM10 et PM2.5) bien que représentant des parts plus petites, sont particulièrement surveillées en raison de leur capacité à pénétrer profondément dans les poumons et à causer des problèmes de santé. Cette répartition aide à identifier les principaux polluants et à orienter les politiques de gestion de la qualité de l'air.
+
+[ARIEGE Pie Chart](ARIEGE_pie_chart.html){width=100% height=500px}
+
+## Corrélation entre Température et Niveaux de Pollution en Hérault
+
+Les barres montrent que la pollution varie au cours de l'année avec, par exemple, des pics pour certains polluants dans certains mois. Il est intéressant de noter que le graphique ne montre pas un seul mois où un type de polluant domine de manière significative tout au long de l'année, indiquant une variation de la prévalence des différents polluants d'un mois à l'autre. Cette information pourrait être utilisée pour analyser les effets saisonniers sur la pollution ou pour évaluer l'efficacité des mesures de contrôle de la pollution au fil du temps.
+
+[ARIEGE Bar Chart](ARIEGE_bar_chart.html){width=100% height=500px}
+
+# Analyse Interactive d'autres Facteurs Climatiques et Pollution
+
+## Influence de l'humidité sur les Niveaux de Pollution
+
+On peut observer des variations dans les deux paramètres au fil des mois. Cependant, il ne semble pas y avoir une corrélation directe et constante entre l'humidité et les niveaux de pollution. Par exemple, en juin, un pic d'humidité correspond à une baisse de la pollution, tandis qu'en août, un pic de pollution ne coïncide pas avec un niveau d'humidité particulièrement élevé ou faible.
+
+            Cela peut suggérer que d'autres facteurs affectent les niveaux de pollution en plus de l'humidité, tels que la température, le vent, les émissions industrielles, le trafic et d'autres sources de pollution. La complexité de ces interactions nécessite une analyse plus approfondie pour comprendre pleinement l'impact de l'humidité et d'autres facteurs météorologiques sur la qualité de l'air.
+            
+[Influence of Humidity on Pollution Levels](ARIEGE_Humidity_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Influence de la Vitesse du Vent sur les Niveaux de Pollution
+
+L'axe horizontal (abscisse) indique les mois de l'année. L'axe vertical (ordonnée) à gauche indique la vitesse du vent, et l'axe à droite indique les valeurs de pollution. On observe des fluctuations significatives dans les deux paramètres au cours de l'année. Parfois, une augmentation de la vitesse du vent semble coïncider avec une diminution des niveaux de pollution, ce qui pourrait indiquer un effet de dispersion des polluants par le vent. Cependant, cette tendance n'est pas constante sur toute la période, ce qui suggère que d'autres facteurs peuvent influencer les niveaux de pollution indépendamment de la vitesse du vent.
+
+            Cela pourrait inclure des variables telles que les émissions industrielles, le trafic, les conditions météorologiques autres que le vent, et les réactions chimiques dans l'atmosphère. Une analyse plus détaillée serait nécessaire pour comprendre pleinement l'impact de la vitesse du vent sur la qualité de l'air.
+
+[Influence of Wind Speed on Pollution Levels](ARIEGE_Wind_Speed_vs_Pollution_Levels.html){width=100% height=500px}

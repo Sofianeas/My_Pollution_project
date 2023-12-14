@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pollution Occitanie - Exploration de la Pollution en Occitanie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Stylesheets -->
+    <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+    <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS for Enhanced Styling -->
+    <style>
+        
+    </style>
+</head>
+
+<body class="nav-fixed">
+    <div id="quarto-search-results"></div>
+    
+    <header id="quarto-header" class="headroom fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-container container-fluid">
+                <a class="navbar-brand" href="./index.html">Pollution Occitanie</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Home</a>
+                        </li>
+ 
+
+                     
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Weather Forecast
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navDepartmentPollutionDropdown">
+                                <li><a class="dropdown-item" href="./Weather_Forecast.html">HERAULT</a></li>
+                                
+                                <!-- More departments can be added in a similar way -->
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <!-- Pollution Data by Department Dropdown -->
+                               <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="menu-text">Pollutions par Départements</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                    <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">HERAULT</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTE-GARONNE.html"><span class="dropdown-text">HAUTE-GARONNE</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTES-PYRENEES.html"><span class="dropdown-text">HAUTES-PYRENEES</span></a></li>
+                                    <li><a class="dropdown-item" href="./AVEYRON.html"><span class="dropdown-text">AVEYRON</span></a></li>
+                                    <li><a class="dropdown-item" href="./ARIEGE.html"><span class="dropdown-text">ARIEGE</span></a></li>
+                                    <li><a class="dropdown-item" href="./PYRENEES-ORIENTALES.html"><span class="dropdown-text">PYRENEES-ORIENTALES</span></a></li>
+                                    
+                                    <!-- More departments can be added in a similar way -->
+                                </ul>
+                            </li>
+                        
+                             
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <!-- Pollution Data by Department Dropdown -->
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-text">Pollutions par City</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                        <li><a class="dropdown-item" href="./MONTPELLIER.html"><span class="dropdown-text">Montpellier</span></a></li>
+                                        <li><a class="dropdown-item" href="./TOULOUSE.html"><span class="dropdown-text">Toulouse</span></a></li>
+                                        <li><a class="dropdown-item" href="./TARBES.html"><span class="dropdown-text">Tarbes</span></a></li>
+                                        <li><a class="dropdown-item" href="./PERPIGNAN.html"><span class="dropdown-text">Perpignan</span></a></li>
+                                        <li><a class="dropdown-item" href="./LOURDES.html"><span class="dropdown-text">Lourdes</span></a></li>
+                                        
+                                        
+                                        <!-- More departments can be added in a similar way -->
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                       <!-- Pollution Data by Department Dropdown -->
+                                       <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="menu-text">Interactive Map</span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                            <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">Occitanie</span></a></li>
+                                            
+                                    
+                                            <!-- More departments can be added in a similar way -->
+                                        </ul>
+                                    </li>
+
+                    
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="content" id="quarto-document-content">
+
+        <header id="title-block-header" class="quarto-title-block default">
+        <div class="quarto-title">
+        <h1 class="title">Interactions entre Météo et Pollution Atmosphérique</h1>
+        </div>
+        
+        
+        
+        <div class="quarto-title-meta">
+        
+            
+          
+            
+          </div>
+          
+        
+        </header>
+        <section>
+          <div class="quarto-figure quarto-figure-center"  padding: 20px;">
+            <figure class="figure" style="text-align: center;">
+                <!-- Embedding the SVG emblem -->
+                <img src="Homepage.svg" class="img-fluid figure-img" alt="Weather forecast emblem" width="400" style="margin-left: auto; margin-right: auto; display: block;">
+            </figure>
+            <!-- Caption for the emblem -->
+            
+        </div>
+        
+        
+        </section>
+        
+        <div class="description-graphique">
+            <h3>Influence du Vent sur la Dispersion des Polluants :</h3>
+            <ul>
+                <li><p><strong>Influence du Vent sur la Dispersion des Polluants</strong> : Nous examinons comment la force et la direction du vent affectent la répartition des polluants dans l'atmosphère. Un vent fort peut dissiper la pollution sur une vaste zone, tandis qu'un vent faible peut provoquer une concentration de polluants près de leur source, détériorant ainsi la qualité de l'air local.</p></li>
+                <li><p><strong>Phénomène d'Inversion Thermique :</strong> : L'inversion thermique, un phénomène où l'air chaud est piégé au-dessus de l'air froid, empêche la dispersion des polluants. Ce phénomène est particulièrement notable dans les zones urbaines, où il peut mener à une accumulation significative de pollution.</p></li>
+                <li><p><strong>Rôle des Précipitations dans la Purification de l'Air </strong> : Les précipitations jouent un rôle clé dans la purification de l'air en entraînant les polluants vers le sol. Après une pluie ou une chute de neige, on observe souvent une amélioration notable de la qualité de l'air.</p></li>
+                <li><p><strong>Impact de la Température sur les Réactions Chimiques Atmosphériques </strong> : Les températures élevées peuvent accélérer certaines réactions chimiques dans l'atmosphère, comme la formation de smog. Ces réactions peuvent augmenter la concentration de polluants dangereux, tels que l'ozone troposphérique.</p></li>
+                <li><p><strong>Effets du Climat sur la Qualité de l'Air :</strong> : Les changements climatiques à long terme affectent également la qualité de l'air. Des températures plus chaudes peuvent entraîner une augmentation des niveaux d'ozone troposphérique, un polluant majeur.</p></li>
+                </ul>
+        
+        </div>
+  
+  
+  
+
+  
+  <div class="description-graphique">
+    <h3>Analyse Comparative des Niveaux de Polluants dans les Villes de la Région Occitanie</h3>
+    <p>Ce graphique interactif présente une comparaison des niveaux moyens de divers polluants atmosphériques dans les villes majeures d'Occitanie. Chaque groupe de barres montre une ville différente, avec des détails sur les concentrations de polluants comme PM2.5, PM10, NO2, etc. Cette visualisation aide à comprendre les différences de pollution entre les villes, mettant en évidence les zones plus impactées par certains polluants. Les données sont une moyenne sur la période étudiée, offrant une vue d'ensemble des tendances de qualité de l'air urbain.</p>
+  </div>
+  <iframe src="city_pollutants_comparison.html" style="width:100%; height:500px;"></iframe>
+  
+  <div class="description-graphique">
+    <h3>Évolution de la Qualité de l'Air en Occitanie : Vue Annuelle</h3>
+    <p>Ce graphique interactif, intitulé "Analyse des Tendances Historiques de la Pollution avec Ligne de Tendance", offre un aperçu détaillé des niveaux moyens de pollution dans la région Occitanie sur plusieurs années. Chaque point bleu représente la valeur moyenne de pollution pour une année donnée, et la ligne rouge en pointillés montre la tendance sur une moyenne mobile de trois ans. Cette visualisation est cruciale pour comprendre l'évolution de la qualité de l'air au fil du temps, soulignant les effets des politiques environnementales et des activités industrielles et urbaines. Elle est particulièrement utile pour les décideurs, les chercheurs et le grand public dans l'évaluation de l'efficacité des mesures de contrôle de la pollution.</p>
+  </div>
+  
+  <iframe src="air_quality_trend_analysis.html" style="width:100%; height:500px;"></iframe>
+  
+  <div class="description-graphique">
+    <h3>Graphique de l'Indice de Qualité de l'Air par Département</h3>
+    <p>Ce graphique interactif présente l'Indice de Qualité de l'Air (AQI) moyen par département dans la région Occitanie. Chaque barre représente un département différent, avec la hauteur indiquant la valeur moyenne de l'AQI. Les couleurs varient du vert (bon) au rouge (mauvais), offrant une représentation visuelle immédiate de la qualité de l'air. Les utilisateurs peuvent survoler chaque barre pour obtenir des détails spécifiques sur les valeurs d'AQI. Ce graphique est un outil essentiel pour comprendre les variations régionales de la qualité de l'air et pour identifier les zones nécessitant une attention particulière en matière de pollution atmosphérique.</p>
+  </div>
+  <iframe src="aqi_dept_chart.html" style="width:100%; height:500px;"></iframe>
+  
+  
+  <div class="description-graphique">
+    <h3>Graphique de l'Indice de Qualité de l'Air par Ville</h3>
+    <p>Ce graphique interactif affiche l'Indice de Qualité de l'Air (AQI) moyen pour différentes villes de la région Occitanie. Chaque barre représente une ville, avec sa valeur moyenne d'AQI. Comme dans le graphique précédent, la gamme de couleurs va du vert (indiquant une bonne qualité de l'air) au rouge (indiquant une qualité de l'air malsaine). Ce graphique permet aux utilisateurs de comparer facilement la qualité de l'air entre les villes et de détecter des tendances ou des problèmes spécifiques à certaines zones urbaines.</p>
+  </div>
+  
+  <iframe src="aqi_city_chart.html" style="width:100%; height:500px;"></iframe>
+  
+        </section>
+    </main>
+    <!-- Bootstrap Bundle with Popper -->
+<script src="site_libs/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+    <script src="site_libs/quarto-html/quarto.js"></script>
+    <script src="site_libs/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+</body>
+</html>

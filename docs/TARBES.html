@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pollution Occitanie - Exploration de la Pollution en Occitanie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Stylesheets -->
+    <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+    <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS for Enhanced Styling -->
+    <style>
+        
+    </style>
+</head>
+
+<body class="nav-fixed">
+    <div id="quarto-search-results"></div>
+    
+    <header id="quarto-header" class="headroom fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-container container-fluid">
+                <a class="navbar-brand" href="./index.html">Pollution Occitanie</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Home</a>
+                        </li>
+ 
+
+                     
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Weather Forecast
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navDepartmentPollutionDropdown">
+                                <li><a class="dropdown-item" href="./Weather_Forecast.html">HERAULT</a></li>
+                                
+                                <!-- More departments can be added in a similar way -->
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <!-- Pollution Data by Department Dropdown -->
+                               <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="menu-text">Pollutions par Départements</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                    <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">HERAULT</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTE-GARONNE.html"><span class="dropdown-text">HAUTE-GARONNE</span></a></li>
+                                    <li><a class="dropdown-item" href="./HAUTES-PYRENEES.html"><span class="dropdown-text">HAUTES-PYRENEES</span></a></li>
+                                    <li><a class="dropdown-item" href="./AVEYRON.html"><span class="dropdown-text">AVEYRON</span></a></li>
+                                    <li><a class="dropdown-item" href="./ARIEGE.html"><span class="dropdown-text">ARIEGE</span></a></li>
+                                    <li><a class="dropdown-item" href="./PYRENEES-ORIENTALES.html"><span class="dropdown-text">PYRENEES-ORIENTALES</span></a></li>
+                                    
+                                    <!-- More departments can be added in a similar way -->
+                                </ul>
+                            </li>
+                        
+                             
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <!-- Pollution Data by Department Dropdown -->
+                                   <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="menu-text">Pollutions par City</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                        <li><a class="dropdown-item" href="./MONTPELLIER.html"><span class="dropdown-text">Montpellier</span></a></li>
+                                        <li><a class="dropdown-item" href="./TOULOUSE.html"><span class="dropdown-text">Toulouse</span></a></li>
+                                        <li><a class="dropdown-item" href="./TARBES.html"><span class="dropdown-text">Tarbes</span></a></li>
+                                        <li><a class="dropdown-item" href="./PERPIGNAN.html"><span class="dropdown-text">Perpignan</span></a></li>
+                                        <li><a class="dropdown-item" href="./LOURDES.html"><span class="dropdown-text">Lourdes</span></a></li>
+                                        
+                                        
+                                        <!-- More departments can be added in a similar way -->
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navDepartmentPollutionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                       <!-- Pollution Data by Department Dropdown -->
+                                       <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pollutions-par-departements" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="menu-text">Interactive Map</span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="nav-menu-pollutions-par-departements">
+                                            <li><a class="dropdown-item" href="./HERAULT.html"><span class="dropdown-text">Occitanie</span></a></li>
+                                            
+                                    
+                                            <!-- More departments can be added in a similar way -->
+                                        </ul>
+                                    </li>
+
+                    
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tarbes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+<section>
+  <div class="quarto-figure quarto-figure-center"  padding: 20px;">
+    <figure class="figure" style="text-align: center;">
+        <!-- Embedding the SVG emblem -->
+        <img src="Tarbes.svg" class="img-fluid figure-img" alt="Hearult Emblem" width="400" style="margin-left: auto; margin-right: auto; display: block;">
+    </figure>
+    <!-- Caption for the emblem -->
+    <figcaption class="figure-caption" style="text-align: center;"><em>Tarbes, La Porte des Pyrénées</em></figcaption>
+</div>
+
+<!-- Additional information about Haute-Garonne -->
+<ul>
+    <li><strong>Nombres d’habitants</strong>: 42 925 hab</li>
+    <li><strong>Densité</strong>: 2 800(<em>nombre d’habitants au km<sup>2</sup></em>)</li>
+    <li><strong>Département</strong>: Huates-Pyrénées</li>
+    <li><strong>Région</strong>: Occitanie</li>
+</ul>
+</section>
+
+<div class="description-graphique">
+    <h3>Variation de la Température et des Niveaux de Pollution au fil des Mois</h3>
+    <p>D'une manière générale, on peut observer une tendance où la température augmente au fil des mois, ce qui est attendu avec le passage de l'hiver au printemps et à l'été. Cependant, la valeur de la pollution ne semble pas suivre un modèle saisonnier aussi clair. Il y a des pics de pollution qui apparaissent sporadiquement et ne sont pas directement corrélés aux changements de température. Par exemple, il y a un pic notable de pollution vers le mois de juin qui ne coïncide pas avec le pic de température le plus élevé.
+
+        Il est intéressant de noter que la pollution semble connaître une baisse significative après le mois de juin, malgré des températures relativement élevées qui persistent jusqu'en septembre. Cela pourrait indiquer que les causes de la pollution dans cette période ne sont pas directement liées aux températures, ou que des mesures ont été prises pour réduire la pollution indépendamment des conditions météorologiques.
+        
+        En résumé, ce graphique suggère qu'il n'y a pas de corrélation directe et constante entre la température et les niveaux de pollution sur cette période et dans cette localité spécifique. Des analyses plus approfondies seraient nécessaires pour comprendre les facteurs sous-jacents qui influencent ces deux variables.</p>
+  </div>
+  <iframe src="Tarbes_Temperature_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+  <div class="description-graphique">
+    <h3>Dynamique Mensuelle de la Température et des Niveaux de Pollution</h3>
+    <p>Ce diagramme circulaire présente la répartition des différentes concentrations de polluants dans l'air à Tarbes. L'ozone (O3) constitue la plus grande part des polluants avec 52.8%. Les oxydes d'azote (NOX) suivent avec 13.7%, et les particules en suspension PM10 représentent 12.8%. Le dioxyde d'azote (NO2) et les particules fines PM2.5 représentent respectivement 9.53% et 8.42%. Enfin, le monoxyde d'azote (NO) est le moins représenté avec 2.73%.
+
+        Cette répartition montre que l'ozone est le polluant prédominant dans l'air à Tarbes, ce qui peut être préoccupant, car des niveaux élevés d'ozone peuvent avoir des effets néfastes sur la santé humaine et l'environnement. Les particules en suspension, telles que PM10 et PM2.5, bien que moins présentes que l'ozone, restent des polluants importants en raison de leur capacité à pénétrer profondément dans les poumons et à causer des problèmes respiratoires. La présence significative de NOX et de NO2 indique également des émissions provenant de sources telles que le trafic routier et les processus industriels. En général, ce graphique est utile pour identifier les cibles prioritaires pour les initiatives de réduction de la pollution de l'air.
+
+
+    </p>
+  </div>
+  <iframe src="Tarbes_pie_chart.html" style="width:100%; height:500px;"></iframe>
+   
+  <div class="description-graphique">
+    <h3>Corrélation entre Température et Niveaux de Pollution à Tarbes</h3>
+    <p>On observe que les PM10 et les NOX constituent les portions les plus importantes de la pollution chaque mois, suivis de près par les PM2.5. L'ozone atteint sa concentration maximale pendant les mois d'été, ce qui est courant car la lumière du soleil et la chaleur peuvent catalyser la formation d'ozone à partir d'autres polluants comme les NOX. Le NO2 et le NO sont présents tout au long de l'année mais en concentrations plus faibles.
+
+        Ce graphique sert à identifier les périodes de l'année où la pollution atmosphérique atteint son maximum et à déterminer quels polluants contribuent le plus à cette pollution. Cela peut aider à planifier des stratégies de réduction de la pollution et à informer le public sur les meilleurs moments pour éviter l'exposition à l'air extérieur lors des pics de pollution.</p>
+  </div>
+  <iframe src="Tarbes_bar_chart.html" style="width:100%; height:500px;"></iframe>
+
+    <h2>Analyse Interactive d'autres Facteurs Climatiques et Pollution</h2>
+    <div class="description-graphique">
+        <h3>Influence de l'humidité sur les Niveaux de Pollution</h3>
+        <p>L'humidité varie tout au long de l'année avec des pics et des creux, mais sans tendance clairement définie. On observe des valeurs d'humidité particulièrement élevées en février et en octobre, tandis que les valeurs les plus basses semblent se situer en mars et en août.
+
+            Quant aux valeurs de pollution, elles présentent également des fluctuations, avec des pics significatifs en février, juin et septembre. Il y a une chute notable en mars suivie d'une augmentation progressive jusqu'en juin. Après une baisse en juillet, la pollution remonte en août et atteint son niveau le plus élevé en septembre, avant de redescendre en octobre.
+            
+            On ne distingue pas de corrélation directe entre l'humidité et la pollution sur ce graphique. Les pics de pollution ne coïncident pas systématiquement avec les niveaux d'humidité élevés ou bas. Cela suggère que d'autres facteurs, tels que les conditions météorologiques variables, les activités humaines ou les changements saisonniers, peuvent influencer les niveaux de pollution indépendamment de l'humidité.
+
+          </p>
+    </div>
+    <iframe src="Tarbes_Humidity_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+
+
+    <div class="description-graphique">
+        <h3>Influence de la Vitesse du Vent sur les Niveaux de Pollution</h3>
+        <p>La vitesse du vent connaît des variations importantes au cours de l'année avec un pic notable en avril et un autre en septembre. La pollution, quant à elle, présente également des variations significatives, avec des valeurs particulièrement élevées en février et septembre, et des valeurs plus faibles en avril et août.
+
+            On peut interpréter une possible corrélation inverse entre la vitesse du vent et les valeurs de pollution : lorsque le vent souffle plus fort, il se peut que la pollution soit moins concentrée en un point donné, due à la dispersion des polluants dans l'atmosphère. Par exemple, en avril, un pic de vitesse du vent coïncide avec une valeur de pollution relativement basse. Cependant, cette tendance n'est pas constante tout au long de l'année, ce qui suggère que d'autres facteurs environnementaux ou anthropiques peuvent influencer les niveaux de pollution
+
+          </p>
+    </div>
+    <iframe src="Tarbes_Wind_Speed_vs_Pollution_Levels.html" style="width:100%; height:500px;"></iframe>
+</div>
+
+
+</main> <!-- /main -->
+
+
+
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,54 @@
+---
+title: "Analyse des Facteurs Climatiques et de la Pollution en Aveyron"
+---
+
+# Aveyron, La Terre des Cent Vallées
+
+![Aveyron Emblem](Aveyron.svg){width=400}
+
+*Emblème de l'Aveyron*
+
+- **Nombres d’habitants**: 279 554 hab
+- **Densité**: 32 (nombre d’habitants au km²)
+- **Région**: Occitanie
+
+## Variation de la Température et des Niveaux de Pollution au fil des Mois
+
+Le graphique "Interactive Plot: Temperature vs Pollution Levels" illustre la variation mensuelle de la température en degrés Celsius (représentée par la ligne rouge) et des niveaux de pollution (représentés par les barres violettes), de janvier à octobre 2023. Les mois sont indiqués sur l'axe horizontal (abscisse) et les valeurs de température et de pollution sur l'axe vertical (ordonnée), avec la température mesurée sur l'échelle de gauche et la pollution sur celle de droite.
+        
+        L'analyse du graphique montre que la température augmente progressivement de janvier à juillet, ce qui correspond aux mois d'été, puis diminue vers octobre, indiquant le passage aux mois d'automne. Les niveaux de pollution ne semblent pas suivre une tendance linéaire par rapport à la température et présentent une variabilité mensuelle marquée. Cependant, on peut observer des périodes où une augmentation de la température coïncide avec une augmentation des niveaux de pollution, ce qui pourrait indiquer que des températures plus élevées peuvent être associées à une augmentation des concentrations de polluants, bien que cela ne soit pas systématique pour tous les mois. Cette figure pourrait donc servir à étudier l'impact potentiel des conditions météorologiques sur la qualité de l'air.
+
+[Interactive Plot: Temperature vs Pollution Levels](AVEYRON_Temperature_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Dynamique Mensuelle de la Température et des Niveaux de Pollution
+
+Le graphique est un diagramme circulaire qui illustre la répartition des différentes concentrations de polluants dans l'air des Pyrénées Orientales. Chaque section du diagramme correspond à un type de polluant et est accompagnée d'un pourcentage qui représente sa part dans la pollution totale.
+        L'ozone (O3) est le polluant le plus représenté, constituant plus de la moitié de la pollution totale. Cela pourrait indiquer une préoccupation majeure pour la qualité de l'air dans cette région, car l'ozone à basse altitude est un polluant nocif. Les oxydes d'azote (NOX, NO2, et NO) et les particules fines (PM10 et PM2.5) représentent également une part significative de la pollution, ce qui peut affecter la santé respiratoire des habitants. Cette répartition peut aider les autorités locales et les chercheurs à cibler les mesures de réduction de la pollution les plus pertinentes pour améliorer la qualité de l'air.
+
+[AVEYRON Pie Chart](AVEYRON_pie_chart.html){width=100% height=500px}
+
+## Corrélation entre Température et Niveaux de Pollution en Hérault
+
+On observe que les valeurs de pollution fluctuent au cours de l'année, avec des pics qui pourraient correspondre à des périodes d'activité humaine accrue ou à des conditions météorologiques qui favorisent l'accumulation de polluants. Par exemple, les mois d'été pourraient voir des niveaux accrus d'ozone due à la réaction photochimique entre les rayons solaires et les polluants atmosphériques. Cependant, sans la ligne rouge mentionnée dans le texte, il n'est pas possible de faire une corrélation directe entre la température et les niveaux de pollution sur ce graphique. Cela dit, l'analyse pourrait servir à comprendre comment les changements saisonniers et les activités humaines impactent la qualité de l'air dans la région de l'Aveyron.
+
+
+[AVEYRON Bar Chart](AVEYRON_bar_chart.html){width=100% height=500px}
+
+# Analyse Interactive d'autres Facteurs Climatiques et Pollution
+
+## Influence de l'humidité sur les Niveaux de Pollution
+
+L'axe des abscisses indique les mois de l'année, tandis que l'axe des ordonnées à gauche indique le pourcentage d'humidité et celui de droite les valeurs de pollution. Le graphique montre que l'humidité et la pollution fluctuent au cours de l'année, mais ne semblent pas suivre de modèle directement corrélé : par exemple, une haute humidité en février ne correspond pas nécessairement à des valeurs de pollution plus basses ou plus hautes.
+
+            On remarque que les valeurs de pollution atteignent leurs pics à des moments différents de ceux des pics d'humidité, ce qui suggère que des facteurs autres que l'humidité peuvent influencer la concentration des polluants. Cette information peut être utile pour analyser et comprendre comment les changements de température et d'autres conditions météorologiques peuvent affecter la qualité de l'air.
+
+
+[Influence of Humidity on Pollution Levels](AVEYRON_Humidity_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Influence de la Vitesse du Vent sur les Niveaux de Pollution
+
+Sur l'axe horizontal, on trouve les mois de l'année, tandis que l'axe vertical indique la vitesse du vent à gauche et les valeurs de pollution à droite. On constate que la vitesse du vent varie considérablement tout au long de l'année, de même que les niveaux de pollution.
+
+            Il y a des moments où une augmentation de la vitesse du vent semble correspondre à une diminution des niveaux de pollution, comme on peut le voir en mars et en juillet. Cela pourrait indiquer que le vent disperse les polluants, réduisant ainsi leur concentration. Cependant, cette tendance n'est pas constante tout au long de l'année, ce qui suggère que d'autres facteurs environnementaux ou humains peuvent également influencer les niveaux de pollution.
+
+[Influence of Wind Speed on Pollution Levels](AVEYRON_Wind_Speed_vs_Pollution_Levels.html){width=100% height=500px}

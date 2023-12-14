@@ -1,0 +1,46 @@
+---
+title: "Air Quality and Pollution Analysis in Occitanie"
+format: html
+---
+
+# Section 1: Weather Conditions and Pollution Dispersion
+
+## Subsection: Wind Influence
+
+Wind plays a crucial role in the dispersion of atmospheric pollutants. The speed and direction of wind can significantly influence the spread of pollutants. A strong wind disperses pollutants over a wider area, reducing their concentration at the source. Conversely, a weak wind leads to the accumulation of pollutants close to their emission source, potentially leading to higher pollution levels in that area.
+
+## Subsection: Thermal Inversion
+
+Thermal inversion is a meteorological phenomenon where a layer of warm air traps pollutants near the ground, beneath colder air. This effect is especially pronounced in urban areas, where it can lead to significant air quality issues. During a thermal inversion, pollutants such as smog, smoke, and particulate matter are unable to rise and disperse, leading to increased pollution concentration at ground level.
+
+# Section 2: Weather Elements and Pollution Reduction
+
+## Subsection: Role of Precipitations
+
+Rain and snow play an essential role in cleaning the air. These forms of precipitation capture pollutants in the atmosphere and carry them to the ground. This natural process significantly reduces airborne pollution levels, especially after prolonged precipitation events, resulting in cleaner and healthier air.
+
+## Subsection: Temperature and Chemical Reactions
+
+Temperature influences the chemical reactions in the atmosphere. Higher temperatures, particularly on sunny days, can accelerate the formation of photochemical pollutants like ozone. These conditions often lead to the creation of smog, which is a major air quality concern in many urban areas.
+
+# Section 3: Climate Factors and Long-Term Air Quality
+
+Climate change and long-term climatic phenomena have a profound impact on air quality. Rising global temperatures can increase the frequency of weather conditions conducive to the formation of harmful pollutants like ground-level ozone. Understanding these long-term trends is vital for developing strategies to mitigate the impact of climate change on air quality.
+
+# Section 4: Interactive Data Visualization
+
+## Pie Chart: Pollutant Distribution by Department in Occitanie
+
+An interactive pie chart here will illustrate the proportion of five major atmospheric pollutants in each department of Occitanie. This visualization helps in identifying the areas with higher concentrations of specific pollutants.
+
+## Bar Graph: Comparative Pollutant Levels in Occitanie Cities
+
+This section will feature a bar graph comparing the average levels of pollutants (PM2.5, PM10, NO2, etc.) in major cities of Occitanie. This visualization is crucial for understanding the differences in air quality across urban areas.
+
+## Trend Analysis: Yearly Air Quality Evolution in Occitanie
+
+A line graph with a moving average trend line will depict the yearly changes in air quality across Occitanie. This will highlight the effectiveness of environmental policies and the impact of industrial and urban activities on air quality.
+
+## Air Quality Index (AQI) Visualization
+
+Two separate interactive graphs will show the AQI for each department and city in Occitanie. These will provide immediate visual insight into the air quality, helping identify areas in need of pollution control measures.

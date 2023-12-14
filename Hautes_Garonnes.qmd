@@ -1,0 +1,45 @@
+---
+title: "Analyse des Facteurs Climatiques et de la Pollution en Haute-Garonne"
+---
+
+# Haute-Garonne, cité des violettes
+
+![Haute-Garonne Emblem](Haute_Garonne.svg){width=400}
+
+*Emblème de la Haute-Garonne*
+
+- **Nombres d’habitants**: 1 415 757
+- **Densité**: 224 (nombre d’habitants au km²)
+- **Région**: Occitanie
+
+## Variation de la Température et des Niveaux de Pollution au fil des Mois
+
+Cette figure montre la variation de la température et des niveaux de pollution de janvier à octobre 2023. La température, tracée en rouge, semble augmenter jusqu'en août avant de diminuer, tandis que les niveaux de pollution, en violet, fluctuent sans tendance claire avec la température. L'analyse suggère que la relation entre température et pollution n'est pas directe.
+
+[Interactive Plot: Temperature vs Pollution Levels](Haute_Garonne_Temperature_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Dynamique Mensuelle de la Température et des Niveaux de Pollution
+
+Le graphique illustre la répartition des différents polluants dans l'atmosphère de la Haute-Garonne. L'ozone (O3) et les oxydes d'azote (NOX) constituent les plus grandes parts, avec chacun environ 28%. Les particules PM10 et le dioxyde d'azote (NO2) suivent, tandis que les autres polluants, comme le monoxyde d'azote (NO), le dioxyde de soufre (SO2), et les particules PM2.5 représentent des proportions plus faibles.
+
+[Haute Garonne Pie Chart](Haute_Garonne_pie_chart.html){width=100% height=500px}
+
+## Corrélation entre Température et Niveaux de Pollution en Hérault
+
+Ce graphique intitulé "Corrélation entre Température et Niveaux de Pollution en Herault" compare les niveaux mensuels de différents polluants dans l'air et la température moyenne sur l'année 2023 dans l'Hérault. La ligne rouge représente la température en degrés Celsius, tandis que les barres colorées représentent la concentration maximale de divers polluants (SO2, PM2.5, PM10, O3, NOX, NO2, NO, H2S) mesurée en microgrammes par mètre cube (µg/m³). Chaque mois est représenté sur l'axe des abscisses (de janvier à octobre), et la concentration de pollution est sur l'axe des ordonnées. Ce graphique permet d'observer les variations saisonnières des niveaux de pollution et comment elles pourraient correspondre aux changements de température, offrant ainsi une perspective sur l'interaction entre le climat et la qualité de l'air.
+
+[Haute Garonne Bar Chart](Haute_Garonne_bar_chart.html){width=100% height=500px}
+
+# Analyse Interactive d'autres Facteurs Climatiques et Pollution
+
+## Influence de l'humidité sur les Niveaux de Pollution
+
+Ce graphique, intitulé "Influence de l'humidité sur les Niveaux de Pollution", illustre la relation entre l'humidité (en pourcentage, représentée par la ligne bleue) et les valeurs de pollution (représentée par la ligne violette), mesurées chaque mois de janvier à octobre 2023. Sur l'axe des abscisses sont indiqués les mois, tandis que l'axe des ordonnées de gauche indique le pourcentage d'humidité et celui de droite les valeurs de pollution. Le graphique montre les variations de l'humidité et de la pollution au fil du temps, soulignant une tendance qui semble inversement proportionnelle : lorsque l'humidité augmente, les valeurs de pollution semblent diminuer et vice versa. Cette visualisation peut suggérer que des niveaux d'humidité plus élevés pourraient être associés à une moindre concentration de polluants dans l'air, bien qu'il soit nécessaire d'analyser d'autres facteurs pour confirmer cette corrélation.
+
+[Influence of Humidity on Pollution Levels](Haute_Garonne_Humidity_vs_Pollution_Levels.html){width=100% height=500px}
+
+## Influence de la Vitesse du Vent sur les Niveaux de Pollution
+
+Le graphique intitulé "Influence de la Vitesse du Vent sur les Niveaux de Pollution" met en évidence la corrélation entre la vitesse du vent (en km/h, indiquée par la ligne verte) et les niveaux de pollution (indiqués par la ligne violette) de janvier à octobre 2023. L'axe horizontal représente le temps (mois), et les axes verticaux montrent la vitesse du vent et les valeurs de pollution sur des échelles distinctes. La tendance générale indique que lorsque la vitesse du vent est élevée, les valeurs de pollution tendent à être plus faibles, ce qui suggère que le vent peut aider à disperser les polluants dans l'air, réduisant ainsi leur concentration. À l'inverse, lorsque la vitesse du vent est faible, les valeurs de pollution augmentent, probablement parce que les polluants restent plus concentrés dans l'air. Cela illustre l'importance de la dispersion des polluants par le vent dans la gestion de la qualité de l'air.
+
+[Influence of Wind Speed on Pollution Levels](Haute_Garonne_Wind_Speed_vs_Pollution_Levels.html){width=100% height=500px}
