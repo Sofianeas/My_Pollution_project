@@ -8,7 +8,7 @@ This project aims to analyze and visualize the relationship between air pollutio
 - **Pollution in Occitanie**: Atmo Occitanie Data
 
 ## Website Link
-Explore our interactive findings here: [https://Sofianas.github.io/My_Pollution_project/]
+Explore our interactive findings here: [https://sofianeas.github.io/My_Pollution_project/]
 
 ## Features
 - **Interactive Maps**: Visual representation of pollution data across major cities in Occitanie.
