@@ -1162,115 +1162,7 @@ fig.show()
 #%%
 
 #%%
-import pandas as pd
-from ipyleaflet import Map, TileLayer, GeoJSON, Marker
-import ipywidgets as widgets
-from IPython.display import display
-import numpy as np 
-#%%
-# Load CSV data into DataFrame
-chemin_fichier_csv = 'C:/Users/SCD-UM/OneDrive/Bureau/My_Pollution_project/codes/Mesure_mensuelle_Region_Occitanie_Polluants_Principaux.csv'
-df = pd.read_csv(chemin_fichier_csv)
 
-# Create 'geometry' column in GeoJSON format
-df['geometry'] = df.apply(lambda row: {"type": "Point", "coordinates": [row['X'], row['Y']]}, axis=1)
-
-# Threshold value
-SEUIL_DE_VALEUR_ELEVEE = 23
-
-# Replace infinite values with NaN and drop rows with NaN values
-df.replace([np.inf, -np.inf], np.nan, inplace=True)
-df.dropna(inplace=True)
-
-# Ensure 'X' (longitude) and 'Y' (latitude) are within valid range
-df = df[(df['X'].between(-180, 180)) & (df['Y'].between(-90, 90))]
-
-# Set the initial center of the map to your area of interest
-# Example: Centering on Toulouse, Occitanie
-center_latitude = 43.6045  # Replace with the latitude of your area
-center_longitude = 1.4442  # Replace with the longitude of your area
-initial_zoom_level = 9      # Adjust the zoom level to your preference
-
-# Create the map with the specified center and zoom level
-carte = Map(center=(center_latitude, center_longitude), zoom=initial_zoom_level)
-
-# Add WMTS layer to the map
-wmts_url = "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS"
-wmts_layer = TileLayer(url=wmts_url, name="WMTS Layer")
-carte.add_layer(wmts_layer)
-
-# Créer une GeoJSON FeatureCollection à partir des données de votre DataFrame
-geojson_data = {
-    "type": "FeatureCollection",
-    "features": []
-}
-
-# Marqueurs pour les valeurs élevées
-high_value_markers = []
-
-for index, row in df.iterrows():
-    feature = {
-        "type": "Feature",
-        "geometry": row['geometry'],
-        "properties": {"nom_dept": row['nom_dept'], "valeur": row['valeur']}
-    }
-    geojson_data['features'].append(feature)
-
-    # Ajouter un marqueur si la valeur de pollution est élevée
-    if row['valeur'] > SEUIL_DE_VALEUR_ELEVEE:
-        marker = Marker(location=(row['Y'], row['X']), draggable=False, title=f"Valeur: {row['valeur']}")
-        high_value_markers.append(marker)
-
-def pollution_color(valeur):
-    """Function to determine color based on pollution level."""
-    if valeur > 50:
-        return "red"
-    elif valeur > 30:
-        return "orange"
-    elif valeur > 10:
-        return "yellow"
-    else:
-        return "green"
-
-def create_geojson_layer(df, threshold):
-    geojson_data = {
-        "type": "FeatureCollection",
-        "features": []
-    }
-    for _, row in df.iterrows():
-        color = pollution_color(row['valeur'])
-        feature = {
-            "type": "Feature",
-            "geometry": row['geometry'],
-            "properties": {"nom_dept": row['nom_dept'], "valeur": row['valeur'], "style": {"color": color, "weight": 1, "fillColor": color, "fillOpacity": 0.8}}
-        }
-        geojson_data['features'].append(feature)
-    return geojson_data
-# Créer une couche GeoJSON pour les zones polluées
-# Update the GeoJSON layer creation in your main code
-geojson_layer = create_geojson_layer(df, SEUIL_DE_VALEUR_ELEVEE)
-carte.add_layer(geojson_layer)
-
-# Update the legend to reflect new categories
-legend = widgets.VBox([
-    widgets.HTML(value="<b>Légende</b>"),
-    widgets.HTML(value='<div style="background:red; width:24px; height:24px; display:inline-block;"></div> Très Élevée (> 50)'),
-    widgets.HTML(value='<div style="background:orange; width:24px; height:24px; display:inline-block;"></div> Élevée (> 30)'),
-    widgets.HTML(value='<div style="background:yellow; width:24px; height:24px; display:inline-block;"></div> Modérée (> 10)'),
-    widgets.HTML(value='<div style="background:green; width:24px; height:24px; display:inline-block;"></div> Faible (<= 10)')
-])
-
-
-
-
-# Ajouter les marqueurs à la carte
-
-for marker in high_value_markers:
-    carte.add_layer(marker)
-
-
-# Afficher la carte avec la légende
-display(widgets.HBox([carte, legend]))
 #%%
 
 # %%
@@ -1302,11 +1194,13 @@ display(carte)
 
 
 # %%
+import json
 import pandas as pd
 from ipyleaflet import Map, TileLayer, GeoJSON, Marker, Heatmap
 import ipywidgets as widgets
 from IPython.display import display
 import numpy as np 
+from ipywidgets.embed import embed_minimal_html
 
 # Load CSV data into DataFrame
 chemin_fichier_csv = 'C:/Users/SCD-UM/OneDrive/Bureau/My_Pollution_project/codes/Mesure_mensuelle_Region_Occitanie_Polluants_Principaux.csv'
@@ -1345,16 +1239,6 @@ def create_heatmap_layer(df):
     heatmap_layer = Heatmap(locations=heatmap_data, radius=20, blur=10, max_zoom=1)
     return heatmap_layer
 
-def pollution_color(valeur):
-    """Function to determine color based on pollution level."""
-    if valeur > 50:
-        return "red"
-    elif valeur > 30:
-        return "orange"
-    elif valeur > 10:
-        return "yellow"
-    else:
-        return "green"
 
 def create_geojson_layer(df, threshold):
     geojson_data = {
@@ -1389,7 +1273,6 @@ legend = widgets.VBox([
 
 
 # Ajouter les marqueurs à la carte
-
 for marker in high_value_markers:
     carte.add_layer(marker)
 
@@ -1399,6 +1282,16 @@ display(widgets.HBox([carte, legend]))
 # Create and add the heatmap layer
 heatmap_layer = create_heatmap_layer(df)
 carte.add_layer(heatmap_layer)
+# Export the map to an HTML file
+embed_minimal_html('exported_map.html', views=[carte], title='My Interactive Map')
 
+# %%
+# Convert DataFrame to GeoJSON
+geojson_dict = df.to_dict(orient='records')
+geojson_str = json.dumps({"type": "FeatureCollection", "features": geojson_dict})
+
+# Write GeoJSON data to a file
+with open('data.geojson', 'w') as file:
+    file.write(geojson_str)
 
 # %%
