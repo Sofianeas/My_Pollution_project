@@ -68,6 +68,7 @@ h1, h2, h3 {
 }
 
 h1 {
+    color: white;
     font-size: 2.4rem; /* Larger size for main titles */
     margin-bottom: 1rem; /* Spacing below the title */
 }
