@@ -342,7 +342,7 @@ for idx, poll in enumerate(monthly_concentration.columns):
 # Update layout for stacked bar chart
 fig.update_layout(
     title="Concentration maximale de pollution à Toulouse par mois",
-    xaxis_title="Mois",
+    xaxis_title="Mois",s
     yaxis_title="Concentration de pollution (µg/m³)",
     barmode='stack',
     paper_bgcolor='LightSteelBlue',

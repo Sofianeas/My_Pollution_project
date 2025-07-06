@@ -563,7 +563,7 @@ fig.show()
 # Load the pollution data into a DataFrame 
 # Change with your actual path
 # unable to unset the absolute path
-weather_file_path = 'C:/Users/SCD-UM//OneDrive/Bureau/My_Pollution_project/codes/Mesure_Annuelle_Region_Occitanie_Polluants_Principaux.csv'
+weather_file_path = 'C:/Users/dell/Desktop/My_Pollution_project/codes/Mesure_Annuelle_Region_Occitanie_Polluants_Principaux.csv'
 df = pd.read_csv(weather_file_path, delimiter=',')
 df.head()
 #%%
@@ -787,7 +787,7 @@ fig.write_html('seasonal_variation_chart.html', full_html=False, include_plotlyj
 # Load the pollution data into a DataFrame 
 # Change with your actual path
 # unable to unset the absolute path
-weather_file_path = 'C:/Users/SCD-UM//OneDrive/Bureau/Project/Projet_Groupe_Pollution_Air_Occitanie/Mesure_Annuelle_Region_Occitanie_Polluants_Principaux.csv'
+weather_file_path = 'C:/Users/dell/Desktop/My_Pollution_project/codes/Mesure_Annuelle_Region_Occitanie_Polluants_Principaux.csv'
 df = pd.read_csv(weather_file_path, delimiter=',')
 df.head()
 
@@ -870,11 +870,11 @@ unique_values
 
 # %%
 # Save df_HERAULT as a CSV file
-output_file_path = 'C:/Users/SCD-UM/OneDrive/Bureau/Project/Projet_Groupe_Pollution_Air_Occitanie/df_HERAULT.csv'
+output_file_path = 'C:/Users/dell/Desktop/My_Pollution_project/df_HERAULT.csv'
 df_HERAULT.to_csv(output_file_path, index=False)
 # %%
 # Load the weather data
-weather_file_path = 'C:/Users/SCD-UM/OneDrive/Bureau/Project/Projet_Groupe_Pollution_Air_Occitanie/Weather_forecast_data.csv'
+weather_file_path = 'C:/Users/dell/Desktop/My_Pollution_project/codes/Weather_forecast_data.csv'
 weather_data = pd.read_csv(weather_file_path, delimiter=';')
 
 # Ensure 'date_debut' in df_HERAULT and 'Date' in weather_data are datetime objects
@@ -1172,7 +1172,7 @@ from ipyleaflet import Map, Marker, Popup
 import ipywidgets as widgets
 
 # Load data
-df = pd.read_csv('C:/Users/SCD-UM/OneDrive/Bureau/My_Pollution_project/codes/Mesure_mensuelle_Region_Occitanie_Polluants_Principaux.csv')
+df = pd.read_csv('C:/Users/dell/Desktop/My_Pollution_project/codes/Mesure_mensuelle_Region_Occitanie_Polluants_Principaux.csv')
 df['geometry'] = df.apply(lambda row: {"type": "Point", "coordinates": [row['X'], row['Y']]}, axis=1)
 
 # Define your threshold value
@@ -1200,7 +1200,8 @@ from ipyleaflet import Map, TileLayer, GeoJSON, Marker, Heatmap
 import ipywidgets as widgets
 from IPython.display import display
 import numpy as np 
-from ipywidgets.embed import embed_minimal_html
+# Correct HTML export with proper template
+from ipywidgets.embed import embed_minimal_html, embed_data 
 
 # Load CSV data into DataFrame
 chemin_fichier_csv = 'C:/Users/SCD-UM/OneDrive/Bureau/My_Pollution_project/codes/Mesure_mensuelle_Region_Occitanie_Polluants_Principaux.csv'
@@ -1293,5 +1294,357 @@ geojson_str = json.dumps({"type": "FeatureCollection", "features": geojson_dict}
 # Write GeoJSON data to a file
 with open('data.geojson', 'w') as file:
     file.write(geojson_str)
+
+# %%
+# Load CSV data into DataFrame
+
+
+#%%
+from ipywidgets.embed import embed_minimal_html, embed_data  # Add embed_data import
+import json
+import pandas as pd
+from ipyleaflet import Map, TileLayer, GeoJSON, Marker, Heatmap, basemaps, basemap_to_tiles, CircleMarker, AwesomeIcon
+import ipywidgets as widgets
+from IPython.display import display
+import numpy as np
+import matplotlib.colors as mcolors
+from datetime import datetime
+
+# Load CSV data into DataFrame
+chemin_fichier_csv = 'C:/Users/dell/Desktop/My_Pollution_project/codes/Mesure_mensuelle_Region_Occitanie_Polluants_Principaux.csv'
+df = pd.read_csv(chemin_fichier_csv)
+
+# Data cleaning and preparation
+df['geometry'] = df.apply(lambda row: {"type": "Point", "coordinates": [row['X'], row['Y']]}, axis=1)
+SEUIL_DE_VALEUR_ELEVEE = 23
+df.replace([np.inf, -np.inf], np.nan, inplace=True)
+df.dropna(inplace=True)
+df = df[(df['X'].between(-180, 180)) & (df['Y'].between(-90, 90))]
+
+# Convert date column to datetime if exists
+if 'date' in df.columns:
+    df['date'] = pd.to_datetime(df['date'])
+    df['year'] = df['date'].dt.year
+    df['month'] = df['date'].dt.month_name()
+
+# Create a color scale for pollution values
+def create_color_scale(max_value=100):
+    colors = ['#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#d7191c']
+    return LinearColormap(  # Correct usage
+        colors=colors,
+        vmin=0,
+        vmax=max_value,
+        caption='Pollution Level'
+    )
+
+max_pollution = df['valeur'].max() if not df.empty else 100
+color_scale = create_color_scale(max_pollution)
+
+def pollution_color(value):
+    return color_scale(value)
+
+# Create the map with better basemap options
+center_latitude = 43.6045
+center_longitude = 1.4442
+initial_zoom_level = 9
+
+carte = Map(
+    center=(center_latitude, center_longitude),
+    zoom=initial_zoom_level,
+    scroll_wheel_zoom=True,
+    layout={'height': '800px', 'width': '100%'},
+    basemap=basemaps.CartoDB.Positron
+)
+
+# Add multiple basemap options
+basemap_options = {
+    "Satellite": basemaps.Esri.WorldImagery,
+    "Terrain": basemaps.Esri.WorldTopoMap,
+    "Street": basemaps.OpenStreetMap.Mapnik,
+    "Dark": basemaps.CartoDB.DarkMatter
+}
+
+for name, basemap in basemap_options.items():
+    layer = basemap_to_tiles(basemap)
+    layer.name = name
+    carte.add_layer(layer)
+    layer.visible = False  # Start with all layers hidden
+
+# Show the satellite layer by default
+carte.layers[1].visible = True
+
+# Enhanced GeoJSON layer with popups
+def create_geojson_layer(df, threshold):
+    features = []
+    for _, row in df.iterrows():
+        color = pollution_color(row['valeur'])
+        feature = {
+            "type": "Feature",
+            "geometry": row['geometry'],
+            "properties": {
+                **row.to_dict(),
+                "style": {
+                    "color": color,
+                    "weight": 1,
+                    "fillColor": color,
+                    "fillOpacity": 0.8,
+                    "radius": 8 + (row['valeur'] / max_pollution * 10)  # Dynamic size based on value
+                }
+            }
+        }
+        features.append(feature)
+    
+    return {
+        "type": "FeatureCollection",
+        "features": features
+    }
+
+geojson_data = create_geojson_layer(df, SEUIL_DE_VALEUR_ELEVEE)
+
+def point_to_layer(feature, latlng):
+    properties = feature['properties']
+    style = properties.get('style', {})
+    return CircleMarker(
+        location=latlng,
+        radius=style.get('radius', 8),
+        color=style.get('color', 'gray'),
+        fill_color=style.get('fillColor', 'gray'),
+        fill_opacity=style.get('fillOpacity', 0.8),
+        weight=style.get('weight', 1)
+    )
+
+def on_each_feature(feature, layer):
+    props = feature['properties']
+    popup_content = f"""
+    <div style="font-family: Arial; font-size: 14px; width: 250px;">
+        <h4 style="margin: 5px 0; color: #333;">Pollution Data</h4>
+        <hr style="margin: 5px 0;">
+        <p style="margin: 5px 0;"><b>Value:</b> {props.get('valeur', 'N/A')}</p>
+        <p style="margin: 5px 0;"><b>Pollutant:</b> {props.get('nom_poll', 'N/A')}</p>
+        <p style="margin: 5px 0;"><b>Station:</b> {props.get('nom_station', 'N/A')}</p>
+        <p style="margin: 5px 0;"><b>Commune:</b> {props.get('nom_com', 'N/A')}</p>
+        <div style="background: {props.get('style', {}).get('color', 'gray')}; 
+            height: 20px; width: 100%; margin-top: 5px;"></div>
+    </div>
+    """
+    layer.popup = widgets.HTML(popup_content)
+
+geojson_layer = GeoJSON(
+    data=geojson_data,
+    style={
+        'opacity': 1,
+        'fillOpacity': 0.8
+    },
+    point_to_layer=point_to_layer,
+    on_each_feature=on_each_feature
+)
+carte.add_layer(geojson_layer)
+
+# Enhanced Heatmap with better styling
+def create_heatmap_layer(df):
+    heatmap_data = [(row['Y'], row['X'], row['valeur']) for _, row in df.iterrows()]
+    return Heatmap(
+        locations=heatmap_data,
+        radius=25,
+        blur=15,
+        max_zoom=1,
+        gradient={0.4: 'blue', 0.6: 'lime', 0.7: 'yellow', 0.8: 'red'},
+        name="Heatmap"
+    )
+
+heatmap_layer = create_heatmap_layer(df)
+heatmap_layer.visible = False  # Start with heatmap hidden
+carte.add_layer(heatmap_layer)
+
+# Add markers for high values with custom icons
+high_value_df = df[df['valeur'] > SEUIL_DE_VALEUR_ELEVEE]
+high_value_markers = []
+for _, row in high_value_df.iterrows():
+    icon = AwesomeIcon(
+        name='exclamation-triangle',
+        marker_color='red',
+        icon_color='white',
+        spin=False
+    )
+    marker = Marker(
+        location=(row['Y'], row['X']),
+        draggable=False,
+        title=f"High Pollution: {row['valeur']}",
+        icon=icon
+    )
+    high_value_markers.append(marker)
+    carte.add_layer(marker)
+
+# Create a time slider if date data is available
+if 'date' in df.columns:
+    years = sorted(df['year'].unique())
+    year_slider = widgets.IntSlider(
+        value=min(years),
+        min=min(years),
+        max=max(years),
+        step=1,
+        description='Year:',
+        continuous_update=False
+    )
+    
+    months = sorted(df['month'].unique(), key=lambda x: datetime.strptime(x, '%B').month)
+    month_dropdown = widgets.Dropdown(
+        options=['All'] + months,
+        value='All',
+        description='Month:'
+    )
+    
+    def update_map(change):
+        year = year_slider.value
+        month = month_dropdown.value
+        
+        filtered_df = df[df['year'] == year]
+        if month != 'All':
+            filtered_df = filtered_df[filtered_df['month'] == month]
+        
+        # Update GeoJSON layer
+        new_geojson = create_geojson_layer(filtered_df, SEUIL_DE_VALEUR_ELEVEE)
+        geojson_layer.data = new_geojson
+        
+        # Update heatmap layer
+        new_heatmap = create_heatmap_layer(filtered_df)
+        carte.remove_layer(heatmap_layer)
+        heatmap_layer = new_heatmap
+        heatmap_layer.visible = heatmap_control.value
+        carte.add_layer(heatmap_layer)
+        
+        # Update high value markers
+        for marker in high_value_markers:
+            carte.remove_layer(marker)
+        
+        high_value_markers.clear()
+        high_value_filtered = filtered_df[filtered_df['valeur'] > SEUIL_DE_VALEUR_ELEVEE]
+        for _, row in high_value_filtered.iterrows():
+            icon = AwesomeIcon(
+                name='exclamation-triangle',
+                marker_color='red',
+                icon_color='white',
+                spin=False
+            )
+            marker = Marker(
+                location=(row['Y'], row['X']),
+                draggable=False,
+                title=f"High Pollution: {row['valeur']}",
+                icon=icon
+            )
+            high_value_markers.append(marker)
+            carte.add_layer(marker)
+    
+    year_slider.observe(update_map, names='value')
+    month_dropdown.observe(update_map, names='value')
+
+# Create layer control
+layer_control = widgets.ToggleButtons(
+    options=[
+        ('Points', 'points'),
+        ('Heatmap', 'heatmap'),
+        ('Both', 'both')
+    ],
+    description='View Mode:',
+    tooltips=['Show points only', 'Show heatmap only', 'Show both layers']
+)
+
+def update_layers(change):
+    if layer_control.value == 'points':
+        geojson_layer.visible = True
+        heatmap_layer.visible = False
+    elif layer_control.value == 'heatmap':
+        geojson_layer.visible = False
+        heatmap_layer.visible = True
+    else:
+        geojson_layer.visible = True
+        heatmap_layer.visible = True
+
+layer_control.observe(update_layers, names='value')
+
+# Enhanced legend with color scale
+legend_html = f"""
+<div style="
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    font-family: Arial;
+    width: 200px;
+">
+    <h4 style="margin: 0 0 10px 0; text-align: center;">Pollution Legend</h4>
+    <div style="display: flex; margin-bottom: 5px;">
+        <div style="width: 30px; height: 20px; background: {color_scale(0)};"></div>
+        <div style="margin-left: 10px;">Low: 0</div>
+    </div>
+    <div style="display: flex; margin-bottom: 5px;">
+        <div style="width: 30px; height: 20px; background: {color_scale(max_pollution*0.25)};"></div>
+        <div style="margin-left: 10px;">{max_pollution*0.25:.1f}</div>
+    </div>
+    <div style="display: flex; margin-bottom: 5px;">
+        <div style="width: 30px; height: 20px; background: {color_scale(max_pollution*0.5)};"></div>
+        <div style="margin-left: 10px;">{max_pollution*0.5:.1f}</div>
+    </div>
+    <div style="display: flex; margin-bottom: 5px;">
+        <div style="width: 30px; height: 20px; background: {color_scale(max_pollution*0.75)};"></div>
+        <div style="margin-left: 10px;">{max_pollution*0.75:.1f}</div>
+    </div>
+    <div style="display: flex;">
+        <div style="width: 30px; height: 20px; background: {color_scale(max_pollution)};"></div>
+        <div style="margin-left: 10px;">High: {max_pollution:.1f}</div>
+    </div>
+    <hr style="margin: 10px 0;">
+    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <div style="width: 20px; height: 20px; background: red; border-radius: 50%;"></div>
+        <div style="margin-left: 10px;">High Pollution Alert</div>
+    </div>
+</div>
+"""
+
+legend = widgets.HTML(legend_html)
+
+# Create basemap selector
+basemap_selector = widgets.Dropdown(
+    options=list(basemap_options.keys()),
+    value='Satellite',
+    description='Basemap:'
+)
+
+def update_basemap(change):
+    selected = basemap_selector.value
+    for layer in carte.layers:
+        if layer.name in basemap_options:
+            layer.visible = (layer.name == selected)
+
+basemap_selector.observe(update_basemap, names='value')
+
+# Create control panel
+controls = widgets.VBox([
+    widgets.HTML("<h3 style='margin: 0 0 10px 0;'>Map Controls</h3>"),
+    basemap_selector,
+    layer_control,
+    widgets.HTML("<hr style='margin: 10px 0;'>"),
+    year_slider if 'date' in df.columns else widgets.HTML(),
+    month_dropdown if 'date' in df.columns else widgets.HTML()
+])
+
+# Display the map with controls
+display(widgets.HBox([
+    carte,
+    controls
+]))
+display(legend)
+
+# Export the map to HTML - METHOD 1 (recommended simple way)
+embed_minimal_html(
+    'exported_map.html',
+    views=[widgets.VBox([controls, carte])],
+    title='Interactive Pollution Map - Occitanie Region'
+)
+
 
 # %%
