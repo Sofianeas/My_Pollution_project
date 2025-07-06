@@ -1,4 +1,4 @@
-/* styles.css - Enhanced version matching MAP.html style */
+/* styles.css - Version harmonisée avec index.html */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -7,9 +7,10 @@
     --accent-color: #556f9c;
     --text-color: #333;
     --text-light: #f8f9fa;
-    --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
-    --shadow-lg: 0 5px 15px rgba(0,0,0,0.2);
+    --shadow-lg: 0 6px 20px rgba(0,0,0,0.15);
+    --border-radius: 8px;
 }
 
 /* Base Styles */
@@ -20,6 +21,17 @@ body {
     background-color: #f8f9fa;
     color: var(--text-color);
     line-height: 1.6;
+}
+
+/* Layout Structure */
+.content {
+    padding: 2rem 0;
+}
+
+.container {
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Typography */
@@ -65,8 +77,8 @@ a:hover {
 /* Navigation */
 .navbar {
     background-color: var(--primary-color) !important;
-    box-shadow: var(--shadow-sm);
-    padding: 0.75rem 1rem;
+    box-shadow: var(--shadow-md);
+    padding: 0.5rem 1rem;
 }
 
 .navbar-brand {
@@ -111,45 +123,31 @@ a:hover {
     color: var(--primary-color);
 }
 
-/* Main Content */
-.container {
-    padding: 2rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Title Blocks */
+.quarto-title-block {
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
-.main-content {
-    padding: 2rem 0;
+.quarto-title {
+    margin-bottom: 1.5rem;
 }
 
-/* Map Container */
-.map-container {
-    height: 70vh;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 2rem;
-    border: 1px solid #ddd;
-    overflow: hidden;
-    position: relative;
+.title {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Cards */
-.explanation-card {
+/* Content Cards */
+.description-graphique {
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: var(--shadow-md);
     margin-bottom: 2rem;
 }
 
-.explanation-title {
+.description-graphique h3 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -158,52 +156,58 @@ iframe {
     display: inline-block;
 }
 
-/* Lists and Legend */
-.list-group-item {
-    padding: 0.75rem 1.25rem;
-    border-left: none;
-    border-right: none;
-    display: flex;
-    align-items: center;
+.explanation-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
 }
 
-.list-group-item i {
-    margin-right: 0.75rem;
-    font-size: 1.1rem;
+/* Visualizations */
+.graphique-container {
+    background-color: #e6ecf2;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
 }
 
-.legend-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    background-color: #f8f9fa;
 }
 
-.legend-color {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 3px;
-    flex-shrink: 0;
+.chart-container {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e0e0e0;
 }
 
-/* Alerts */
-.alert {
-    padding: 1rem;
-    border-radius: 6px;
+/* Lists */
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-unstyled li {
     margin-bottom: 1rem;
-}
-
-.alert-info {
-    background-color: #e7f5ff;
-    border-left: 4px solid var(--secondary-color);
 }
 
 /* Footer */
 footer {
     background-color: var(--dark-color);
     color: white;
-    padding: 2rem 0;
-    margin-top: 3rem;
+    padding: 2.5rem 0;
+    margin-top: 4rem;
 }
 
 footer h5 {
@@ -223,12 +227,16 @@ footer hr {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .map-container {
-        height: 60vh;
+    .container {
+        padding: 1.5rem 1rem;
     }
     
-    .explanation-card {
+    .description-graphique {
         padding: 1.5rem;
+    }
+    
+    iframe {
+        height: 400px;
     }
     
     h1 {
@@ -242,32 +250,10 @@ footer hr {
     .navbar-brand {
         font-size: 1.25rem;
     }
-}
-
-/* Chart Containers */
-.chart-container {
-    width: 100%;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid #e0e0e0;
-}
-
-canvas {
-    width: 100% !important;
-    height: auto !important;
-}
-
-/* Visualizations */
-.visualization-container {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid #e0e0e0;
+    
+    .quarto-title {
+        margin-bottom: 1rem;
+    }
 }
 
 /* Utility Classes */
@@ -281,31 +267,4 @@ canvas {
 
 .mb-4 {
     margin-bottom: 1.5rem;
-}
-
-/* Special Navigation */
-.nav-special {
-    background: var(--accent-color);
-    padding: 0.75rem 0;
-}
-
-.nav-special ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-special ul li a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    transition: color 0.3s;
-    font-weight: 500;
-}
-
-.nav-special ul li a:hover {
-    color: #cfd9e6;
-    text-decoration: none;
 }
